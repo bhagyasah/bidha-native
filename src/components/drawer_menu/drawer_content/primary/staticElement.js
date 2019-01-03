@@ -4,6 +4,7 @@ import {
 } from 'native-base';
 
 export default (content, idx) => {
+  const color = idx % 2;
   return (
     <View key={content.label}>
       <ListItem style={{ marginLeft: 0 }}>
@@ -12,11 +13,11 @@ export default (content, idx) => {
         </Left>
         <Right>
           <Badge
-            primary={idx % 2 === 0}
-            success={idx % 2 !== 0}
+            primary={color === 0}
+            success={color !== 0}
           >
             <Text>
-              {`$ ${1.09}`}
+              { color !== 0 ? `$ ${1.09}` : 1}
             </Text>
           </Badge>
         </Right>

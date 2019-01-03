@@ -7,6 +7,7 @@ import nativeBaseHandler from '../common/nativeBaseHander';
 import { APP_COLOR, APP_TITLE_TEXT_COLOR } from '../config';
 import * as actions from '../actions';
 import Messenger from '../components/messenger';
+import BirthProfile from './modals/birth-profile';
 
 //  Drawer.defaultProps.styles.mainOverlay.elevation = 0;
 
@@ -23,7 +24,7 @@ class index extends React.Component {
 
   render() {
     const { renderMain } = this.state;
-    const { navigation } = this.props;
+    const { navigation, updateModalValue } = this.props;
     // console.log(this.props.astrologers);
 
     if (renderMain) {
@@ -43,11 +44,12 @@ class index extends React.Component {
           </Body>
           <Right>
             <Button transparent onPress={this.openDrawer}>
-              <Icon style={{ color: APP_TITLE_TEXT_COLOR }} name="person" />
+              <Icon style={{ color: APP_TITLE_TEXT_COLOR }} name="person" onPress={() => updateModalValue('showProfileModal', true)} />
             </Button>
           </Right>
         </Header>
         <Messenger />
+        <BirthProfile {...this.props} />
       </View>
     );
   }
