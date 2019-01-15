@@ -1,9 +1,8 @@
-import React, { Component }from 'react';
+import React, { Component } from 'react';
 import Modal from 'react-native-modal';
-import ModalHeader from './Header';
 import ModalContent from './Content';
 
-class BirthProfile extends Component {
+class TermsAndPrivacy extends Component {
   state = {};
 
   render() {
@@ -11,16 +10,15 @@ class BirthProfile extends Component {
     return (
       <Modal
         backdropColor="null"
-        isVisible={modal.showProfileModal}
         animationInTiming={500}
         animationOutTiming={500}
+        isVisible={modal['Terms&Privacy']}
         style={{ flex: 1, backgroundColor: '#fff', margin: 0 }}
       >
-        <ModalHeader {...this.props} />
         <ModalContent {...this.props} />
       </Modal>
     );
   }
 }
 
-export default BirthProfile;
+export default TermsAndPrivacy;

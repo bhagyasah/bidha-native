@@ -5,7 +5,7 @@ import {
 } from 'native-base';
 
 const CustomButtom = ({
-  content, navigation, registerForm, buttonPressHandler,
+  content, registerForm,
 }) => (
   <View style={{ justifyContent: 'center', alignItems: 'center' }}>
     <View style={{ justifyContent: 'center', alignItems: 'center', height: 50, padding: 10 }}>
@@ -16,7 +16,7 @@ const CustomButtom = ({
     <Button
       success
       full
-      onPress={() => buttonPressHandler(content, navigation)}
+      onPress={() => {}}
     >
       <Text uppercase={false}>{content.label}</Text>
     </Button>
@@ -25,8 +25,7 @@ const CustomButtom = ({
 
 CustomButtom.propTypes = {
   content: PropTypes.objectOf(PropTypes.any).isRequired,
-  navigation: PropTypes.objectOf(PropTypes.any).isRequired,
   registerForm: PropTypes.objectOf(PropTypes.any).isRequired,
-  buttonPressHandler: PropTypes.func.isRequired,
+  // buttonPressHandler: PropTypes.func.isRequired,
 };
 export default CustomButtom;

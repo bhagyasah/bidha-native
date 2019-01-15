@@ -9,7 +9,7 @@ export const contents = props => ([
   { element: 'touchable', iconLeft: 'people', label: 'Astrologers', iconRight: 'arrow-forward' },
   { element: 'touchable', iconLeft: 'help', label: 'Idea what to ask ', iconRight: 'arrow-forward'},
   { element: 'separator', label: 'Help & Supports' },
-  { element: 'touchable', iconLeft: 'at', label: 'Customers Support', iconRight: 'arrow-forward'},
+  { element: 'touchable', iconLeft: 'at', label: 'Customer Support', iconRight: 'arrow-forward'},
   { element: 'touchable', iconLeft: 'help', label: 'How Bidha works', iconRight: 'arrow-forward'},
   { element: 'touchable', iconLeft: 'document', label: 'Terms & Privacy', iconRight: 'arrow-forward'},
 ]);

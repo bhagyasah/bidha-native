@@ -7,12 +7,12 @@ import staticElement from './staticElement';
 import separatorElement from './separatorElement';
 import * as actions from '../../../../actions';
 
-const contentElement = (content, idx, toggleMenu) => {
+const contentElement = (content, idx, toggleMenu, updateModalValue, navigation) => {
   switch (content.element) {
     case 'static':
       return staticElement(content, idx);
     case 'touchable':
-      return touchableElement(content, idx, toggleMenu);
+      return touchableElement(content, idx, toggleMenu, updateModalValue, navigation);
     case 'separator':
       return separatorElement(content, idx);
     default:
@@ -22,10 +22,10 @@ const contentElement = (content, idx, toggleMenu) => {
 
 const DrawerContent = (props) =>  {
   // console.log('state in Drawercontent', props.toggleMenu);
-  const { contents, toggleMenu } = props;
+  const { contents, toggleMenu, updateModalValue, navigation } = props;
   return (
     <View>
-      {contents.map((content, idx) => contentElement(content, idx, toggleMenu))}
+      {contents.map((content, idx) => contentElement(content, idx, toggleMenu, updateModalValue, navigation))}
     </View>
   );
 };

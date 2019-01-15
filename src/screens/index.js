@@ -1,18 +1,19 @@
 import React from 'react';
 import { AppLoading } from 'expo';
 import PropTypes from 'prop-types';
-import { Header, Body, Left, Right, Icon, Title, Button, View,  } from 'native-base';
+import { Header, Body, Left, Right, Icon, Title, Button, View } from 'native-base';
 import { connect } from 'react-redux';
 import nativeBaseHandler from '../common/nativeBaseHander';
 import { APP_COLOR, APP_TITLE_TEXT_COLOR } from '../config';
 import * as actions from '../actions';
 import Messenger from '../components/messenger';
 import BirthProfile from './modals/birth-profile';
-
+import ShowTermsAndPrivacyModal from './modals/term-and-privacy';
+import CustomerSupport from './modals/customer-support';
+// import Payment from '../payment';
 //  Drawer.defaultProps.styles.mainOverlay.elevation = 0;
 
 class index extends React.Component {
-
   state = { renderMain: true };
 
   async componentWillMount() {
@@ -48,8 +49,11 @@ class index extends React.Component {
             </Button>
           </Right>
         </Header>
+        {/* <Payment /> */}
         <Messenger />
         <BirthProfile {...this.props} />
+        <ShowTermsAndPrivacyModal {...this.props} />
+        <CustomerSupport {...this.props} />
       </View>
     );
   }

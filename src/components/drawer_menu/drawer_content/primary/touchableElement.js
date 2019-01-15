@@ -2,11 +2,21 @@ import React from 'react';
 import { TouchableOpacity, View, Text } from 'react-native';
 import { Icon } from 'native-base';
 
-const touchableElement = (content, id, toggleMenu) => {
+const drawerClickHelper = (lable, toggleMenu, updateMadalValue, navigation) => {
+  const tempLabel = lable.replace(/\s/g, '');
+  if ((tempLabel === 'Astrologers') || (tempLabel === 'Ideawhattoask')) {
+    return toggleMenu(tempLabel);
+  }
+  navigation.closeDrawer();
+  setTimeout(() => updateMadalValue(tempLabel, true), 600);
+  // return updateMadalValue(tempLabel, true);
+};
+
+const touchableElement = (content, id, toggleMenu, updateMadalValue, navigation) => {
   // console.log('onpress func in touchable compenent', content, id, toggleMenu);
   return (
     <TouchableOpacity
-      onPress={() => toggleMenu(content.label)}
+      onPress={() => drawerClickHelper(content.label, toggleMenu, updateMadalValue, navigation)}
       key={content.label}
       style={{
         padding: 15,
